@@ -2,9 +2,18 @@
 
 **Проверка параметров соединения и региональных настроек компьютера и браузера.**
 
-Windows · Portable · RU / EN · Бесплатно
+Windows · macOS BETA TEST · Linux BETA TEST · RU / EN · Бесплатно
 
 [**Скачать для Windows**](https://github.com/tehloft1-glitch/NetAdvisor/releases/latest) · [Все выпуски](https://github.com/tehloft1-glitch/NetAdvisor/releases) · [Студия nam3.ru](https://nam3.ru)
+
+| Система | Версия | Скачать |
+|---|---|---|
+| Windows | 0.6.3 · стабильная | [Скачать](https://github.com/tehloft1-glitch/NetAdvisor/releases/download/v0.6.3/NetAdvisor-0.6.3.exe) |
+| macOS · Apple Silicon | **0.1.2 BETA TEST** | [Скачать](https://github.com/tehloft1-glitch/NetAdvisor/releases/download/v0.6.3/NetAdvisor-macOS-AppleSilicon-0.1.2-BETA-TEST.zip) |
+| macOS · Intel | **0.1.2 BETA TEST** | [Скачать](https://github.com/tehloft1-glitch/NetAdvisor/releases/download/v0.6.3/NetAdvisor-macOS-Intel-0.1.2-BETA-TEST.zip) |
+| Linux · x64 | **0.1.2 BETA TEST** | [Скачать](https://github.com/tehloft1-glitch/NetAdvisor/releases/download/v0.6.3/NetAdvisor-Linux-x64-0.1.2-BETA-TEST.tar.gz) |
+
+Все файлы находятся в **Assets одного выпуска**. Версия Windows остаётся 0.6.3; у macOS и Linux собственная версия 0.1.2 BETA TEST.
 
 ![Окно Net Advisor 0.6.3 — пример результатов проверки](docs/net-advisor-app.png)
 
@@ -48,7 +57,7 @@ Net Advisor помогает проверить, соответствуют ли
 
 ![Примеры состояния значка Net Advisor в системных панелях Windows и macOS](docs/net-advisor-tray.png)
 
-*Иллюстрация размещения значка, а не снимки пользовательских рабочих столов. Пример macOS — макет будущей версии.*
+*Иллюстрация размещения значка, а не снимки пользовательских рабочих столов. Пример macOS — макет размещения значка. Mac-сборка доступна для BETA TEST; запуск на настоящем Mac пока не проверен.*
 
 ## Дополнительные проверки
 
@@ -74,11 +83,41 @@ Net Advisor помогает проверить, соответствуют ли
 
 ## Поддерживаемые системы
 
-| Система | Статус |
-|---|---|
-| Windows | Доступна версия 0.6.3 |
-| macOS | Планируется; сборка пока не выпущена |
-| Linux | Планируется; сборка пока не выпущена |
+| Система | Версия | Скачать |
+|---|---|---|
+| Windows | 0.6.3 · стабильная | [Скачать](https://github.com/tehloft1-glitch/NetAdvisor/releases/download/v0.6.3/NetAdvisor-0.6.3.exe) |
+| macOS · Apple Silicon | **0.1.2 BETA TEST** | [Скачать](https://github.com/tehloft1-glitch/NetAdvisor/releases/download/v0.6.3/NetAdvisor-macOS-AppleSilicon-0.1.2-BETA-TEST.zip) |
+| macOS · Intel | **0.1.2 BETA TEST** | [Скачать](https://github.com/tehloft1-glitch/NetAdvisor/releases/download/v0.6.3/NetAdvisor-macOS-Intel-0.1.2-BETA-TEST.zip) |
+| Linux · x64 | **0.1.2 BETA TEST** | [Скачать](https://github.com/tehloft1-glitch/NetAdvisor/releases/download/v0.6.3/NetAdvisor-Linux-x64-0.1.2-BETA-TEST.tar.gz) |
+
+### macOS — 0.1.2 BETA TEST
+
+Для macOS 15 и новее. **Apple Silicon** — компьютеры с чипами M1, M2, M3 и новее; **Intel** — компьютеры с процессором Intel.
+
+Распакуйте ZIP и откройте **NetAdvisor.app**. Сборки включают .NET — устанавливать его отдельно не нужно.
+
+Это предварительный перенос. Сборки проверены на структуру пакета и архитектуру исполняемых файлов, но **не запускались на настоящем Mac**. Они пока не подписаны Apple Developer ID и не прошли нотариализацию; macOS может запросить отдельное подтверждение запуска.
+
+### Linux — 0.1.2 BETA TEST
+
+Linux x64 с графическим окружением X11 или XWayland. Распакуйте **весь** архив и запустите **run.sh** или **NetAdvisor**, сохранив библиотеки рядом с программой. Устанавливать .NET отдельно не нужно.
+
+Проверены запуск окна, реальные проверки компьютера и 54 проверки логики/локального протокола в **Ubuntu 26.04 под WSLg**. Работа в других дистрибутивах и окружениях требует пользовательского тестирования.
+
+Геолокация автоматически считывается через настройку GNOME. В других окружениях может отображаться «Настройка не определена». Работа трея зависит от поддержки StatusNotifier/AppIndicator; если доступного трея нет, сворачивание сохраняет окно в панели задач.
+
+![Интерфейс Linux-версии 0.1.2 BETA TEST](docs/net-advisor-linux-beta.png)
+
+*Снимок запущенной Linux-сборки в Ubuntu/WSLg; показаны демонстрационные результаты.*
+
+### Известные особенности BETA TEST
+
+- Некоторые временные окна браузерной проверки нужно закрывать вручную после получения результата.
+- Общий запрет геолокации Safari пока не подтверждается автоматически.
+- Браузеры из Flatpak/Snap и нестандартные профили могут требовать ручного выбора; чтение разрешений бывает недоступно.
+- Непрочитанные настройки не получают зелёную галочку.
+
+Если что-то не работает, создайте [Issue](https://github.com/tehloft1-glitch/NetAdvisor/issues) и укажите ОС, архитектуру, версию программы и шаги воспроизведения. Не публикуйте токены, IP и личные данные профилей.
 
 ## Конфиденциальность и принцип работы
 
